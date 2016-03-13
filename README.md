@@ -46,8 +46,11 @@ http://iamkrushn.com/demo/myresume
 Contact for support 
 
 Skype: kathrecha.krushn
+
 Gmail: kathrechakrushn@gmail.com
+
 Mobile: +91 8758702738
+
 Website: http://iamkrushn.com
 
 
