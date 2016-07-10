@@ -1,0 +1,196 @@
+<form name="edu_form" ng-submit="edu_form.$valid && submit()" novalidate>
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Settings
+            <div class="pull-right">
+                <button ng-disabled="edu_form.$invalid" class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </h1>    
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+
+            <div ng-show="msg" class="alert alert-success">
+                <button class="close" data-dismiss="alert">&times;</button>
+                {{msg}}
+            </div>
+
+            <div class="col-md-12">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tab_1">Contact Info</a></li>
+                        <li><a data-toggle="tab" href="#tab_2">About me</a></li>
+                        <li><a data-toggle="tab" href="#tab_3">SEO</a></li>
+                        <li><a data-toggle="tab" href="#tab_4">Mail settings</a></li>
+                        <li><a data-toggle="tab" href="#tab_5">Admin access</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab_1" class="tab-pane active">
+
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input name="name" ng-model="name" placeholder="Description" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.name.$dirty && edu_form.name.$invalid">
+                                    Name is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Skype</label>
+                                <input name="mobile" ng-model="skype" placeholder="Skype" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Mobile</label>
+                                <input name="mobile" ng-model="mobile" placeholder="Mobile" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.mobile.$dirty && edu_form.mobile.$invalid">
+                                    Mobile is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Telephone</label>
+                                <input name="telephone" ng-model="telephone" placeholder="Telephone" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.telephone.$dirty && edu_form.telephone.$invalid">
+                                    Telephone is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Email address </label>
+                                <input name="email_address" ng-model="email_address" placeholder="Email address" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.email_address.$dirty && edu_form.email_address.$invalid">
+                                    Email address is required.
+                                </span>
+                            </div>                        
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input name="address" ng-model="address" placeholder="Address" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.address.$dirty && edu_form.address.$invalid">
+                                    Address is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Map url</label>
+                                <input name="map_url" ng-model="map_url" placeholder="Map url" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.map_url.$dirty && edu_form.map_url.$invalid">
+                                    Map url is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Map image</label>
+
+                                <br />
+                                <img class="img_upload_loading" ng-src="{{thumb_url + '/' + map_image}}" />
+
+                                <br />
+                                <br />
+                                <input type="hidden" name="map_image" value="{{map_image}}" />                            
+                                <input type="file" name="file" onchange="angular.element(this).scope().uploadMap(this.files)" />                            
+                            </div>
+                        </div>
+                        <div id="tab_2" class="tab-pane">
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <input name="designation" ng-model="designation" placeholder="Designation" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.designation.$dirty && edu_form.designation.$invalid">
+                                    Designation is required.
+                                </span>
+                            </div>    
+                            <div class="form-group">
+                                <label>Skills</label>
+                                <textarea name="skills" ng-model="skills" placeholder="Skills" class="form-control" required></textarea>
+                                <span style="color:red" ng-show="edu_form.skills.$dirty && edu_form.skills.$invalid">
+                                    Skills is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>About me</label>
+                                <textarea name="about_me" ng-model="about_me" placeholder="About me" class="form-control" required></textarea>
+                                <span style="color:red" ng-show="edu_form.about_me.$dirty && edu_form.about_me.$invalid">
+                                    About me is required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label>Avatar image</label>
+
+                                <br />
+                                <img class="img_upload_loading" ng-src="{{thumb_url + '/' + avatar}}" />
+
+                                <br />
+                                <br />
+                                <input type="hidden" name="map_image" value="{{avatar}}" />                            
+                                <input type="file" name="file" onchange="angular.element(this).scope().uploadAvatar(this.files)" />                            
+                            </div>
+                        </div>
+                        <div id="tab_3" class="tab-pane">
+                            <div class="form-group">
+                                <label>Meta title </label>
+                                <input name="meta_title" ng-model="meta_title" placeholder="Meta title" class="form-control" required />
+                                <span style="color:red" ng-show="edu_form.meta_title.$dirty && edu_form.meta_title.$invalid">
+                                    Meta title is required.
+                                </span>
+                            </div>    
+                            <div class="form-group">
+                                <label>Meta keywords</label>
+                                <textarea name="meta_keywords" ng-model="meta_keywords" placeholder="Meta keywords" class="form-control" required></textarea>
+                                <span style="color:red" ng-show="edu_form.meta_keywords.$dirty && edu_form.meta_keywords.$invalid">
+                                    Meta keywords is required.
+                                </span>
+                            </div>  
+                            <div class="form-group">
+                                <label>Meta content</label>
+                                <textarea name="meta_content" ng-model="meta_content" placeholder="Meta title" class="form-control" required></textarea>
+                                <span style="color:red" ng-show="edu_form.meta_content.$dirty && edu_form.meta_content.$invalid">
+                                    Meta content is required.
+                                </span>
+                            </div>   
+                        </div><!-- /.box-body -->       
+                        <div id="tab_4" class="tab-pane">
+                            <div class="form-group">
+                                <label>Mail protocol</label>
+                                <select name="mail_protocol" ng-model="mail_protocol" placeholder="Mail protocol" class="form-control" required>
+                                    <option value="smtp">SMTP</option>
+                                    <option value="mail">PHP Mail</option>
+                                </select>
+                                <span style="color:red" ng-show="edu_form.mail_protocol.$dirty && edu_form.mail_protocol.$invalid">
+                                    Mail protocol is required.
+                                </span>
+                            </div>   
+                            <div class="form-group">
+                                <label>Mail Host</label>
+                                <input name="mail_host" ng-model="mail_host" placeholder="Mail host" class="form-control" />
+                            </div>   
+                            <div class="form-group">
+                                <label>Mail username</label>
+                                <input name="mail_username" ng-model="mail_username" placeholder="Mail username" class="form-control" />
+                            </div>   
+                            <div class="form-group">
+                                <label>Mail password</label>
+                                <input name="mail_password" ng-model="mail_password" placeholder="Mail password" class="form-control" />
+                           </div>   
+                            <div class="form-group">
+                                <label>Mail SMTP port</label>
+                                <input name="mail_smtp_port" ng-model="mail_smtp_port" placeholder="Mail SMTP port" class="form-control" />
+                            </div>   
+                        </div>
+                        <div id="tab_5" class="tab-pane">
+                            
+                            <div class="row">
+                                <p class="alert alert-info">Write username / password to change username / password.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input name="username" ng-model="username" placeholder="Username" class="form-control" />
+                            </div> 
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="password" ng-model="password" placeholder="Password" class="form-control" />
+                            </div> 
+                        </div>
+                    </div>
+                </div>     
+            </div>
+    </section><!-- /.content -->
+</form>

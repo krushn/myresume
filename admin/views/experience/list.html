@@ -1,0 +1,54 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Experience
+        <div class="pull-right">
+            <a class="btn btn-primary" ui-sref=experience_insert>
+                <i class="fa fa-plus"></i> Experience
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-body no-padding">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Sort order</th>
+                            <th>Status</th>
+                            <th class="text-right">Action</th>
+                        </tr>
+                        <tr ng-repeat="experience in experiences">
+                            <td>{{experience.company}}</td>
+                            <td>{{experience.position}}</td>
+                            <td>{{experience.sort_order}}</td>
+                            <td>
+                                <span ng-show="{{experience.status}}">Enabled</span>
+                                <span ng-hide="{{experience.status}}">Disabled</span>
+                            </td>                            
+                            <td class="text-right">
+                                <a href="#experience/edit/{{experience.experience_id}}" class="btn btn-primary">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a ng-click="delete(experience.experience_id);" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+                
+                <div class="box-footer clearfix">
+                    <ul ng-bind-html-unsafe="pagination" class="pagination pagination-sm no-margin pull-right"></ul>
+                </div>
+                
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

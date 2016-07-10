@@ -1,0 +1,40 @@
+<div class=dashboard-page> 
+    <div class=container-fluid>
+        <div class=row> 
+            <div class="col-sm-12 col-md-12 main">
+                <div> 
+                    <snap-drawer> 
+                        <div ng-include="'views/common/menu.html'"></div>
+                    </snap-drawer> 
+                    <snap-dragger></snap-dragger> 
+                    <snap-content snap-opt-tap-to-close="false" class="bg-lighterBlue fg-white"> 
+                        <a snap-toggle=left ng-click="menuOpen = !menuOpen">
+                            <span class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen class="fa fa-times fa-2x"></i> </span> 
+                        </a> 
+                        <div class=fr>
+                            <h2>My Education</h2>
+                        </div> 
+                        
+                        <hr />
+                        
+                        <div class=jumbotron> 
+                            <div class=container>
+                                
+                                <ul class="unstyled-list education-list">
+                                    <li ng-repeat="row in education | orderBy:'sort_order'">
+                                        
+                                        <h3>{{row.degree}} <span class="passout_year"> in {{row.passout_year}}</span></h3>
+                                     
+                                        <p>{{row.institute}}</p>
+                                        
+                                        <p>{{row.result}}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </snap-content>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>

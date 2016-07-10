@@ -1,0 +1,17 @@
+<div class=snap-menu ng-controller="MenuCtrl">
+    <div class="sidebar-header text-center">
+        <img ng-src="{{avatar}}" class="sidebar-img img-circle">
+    </div> 
+    <ul class=snap-ul> 
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref=overview>HOME</a></li>
+        <li ng-class="{active: $state.includes('achievements')}"><a href=#achievements>ACHIEVEMENTS</a></li>
+        <li ng-class="{active: $state.includes('education')}"><a href=#education>EDUCATION</a></li>
+        <li ng-class="{active: $state.includes('experience')}"><a href=#experience>EXPERIENCE</a></li>
+        <li ng-class="{active: $state.includes('portfolio')}"><a href=#portfolio>PORTFOLIO</a></li>
+        <li ng-class="{active: $state.includes('projects')}"><a href=#projects>PROJECTS</a></li>
+        <li ng-class="{active: $state.includes('contact')}"><a href=#contact>CONTACT ME</a></li>
+        <!--
+        <li><a ui-sref=login>LOGOUT</a></li>
+        -->
+    </ul> 
+</div>

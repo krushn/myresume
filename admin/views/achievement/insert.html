@@ -1,0 +1,52 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Achievement
+        <div class="pull-right">
+            <a onclick="history.back()" class="btn btn-primary">
+                Achievements &nbsp; <i class="fa fa-arrow-circle-o-right"></i> 
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Add new achievement</h3>
+                </div>
+                <form name="achiv_form" ng-submit="achiv_form.$valid && submit()" novalidate>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <textarea name="description" ng-model="description" placeholder="Description" class="form-control" required></textarea>
+                            <span style="color:red" ng-show="achiv_form.description.$dirty && achiv_form.description.$invalid">
+                                Description is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sort order</label>
+                            <input name="sort_order" type="text" ng-model="sort_order" placeholder="Sort order" class="form-control" required />
+                            <span style="color:red" ng-show="achiv_form.sort_order.$dirty && achiv_form.sort_order.$invalid">
+                                Sort order is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <select ng-model="status" name="status" class="form-control">
+                                <option value="1">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button ng-disabled="achiv_form.$invalid" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

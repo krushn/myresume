@@ -1,0 +1,122 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Dashboard
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>
+                        {{achievements}}
+                    </h3>
+                    <p>
+                        Achievements
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-trophy"></i>
+                </div>
+                <a href="#/achievements" class="small-box-footer">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div><!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>
+                       {{projects}}
+                    </h3>
+                    <p>
+                       Projects
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-tasks"></i>
+                </div>
+                <a href="#/proejcts" class="small-box-footer">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div><!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>
+                        {{portfolio}}
+                    </h3>
+                    <p>
+                        Portfolio
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-image"></i>
+                </div>
+                <a href="#/certificate" class="small-box-footer">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div><!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>
+                        {{certificate}}
+                    </h3>
+                    <p>
+                        Certificate
+                    </p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-certificate"></i>
+                </div>
+                <a href="#/education" class="small-box-footer">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div><!-- ./col -->
+    </div><!-- /.row -->
+
+    <!-- Main row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Visitors</h3>
+                    
+                    <div class="pull-right box-tools">
+                        <!-- button with a dropdown -->
+                        <div class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-success btn-sm dropdown-toggle"><i class="fa fa-bars"></i></button>
+                            <ul role="menu" class="graph-type-menu dropdown-menu pull-right">
+                                <li><a data-type='month' ng-click="getGraphData('month');">Month</a></li>
+                                <li><a data-type='year' ng-click="getGraphData('year');">Year</a></li>
+                                <li><a data-type='day' ng-click="getGraphData('day');">Day</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="box-body">
+                    <canvas height="65" id="line" class="chart chart-line" chart-data="data"
+                      chart-labels="labels" chart-legend="true" chart-series="series"
+                      chart-click="onClick" >
+                    </canvas> 
+                </div>
+            </div>       
+        </div>    
+    </div><!-- /.row (main row) -->
+
+</section><!-- /.content -->

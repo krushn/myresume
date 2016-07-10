@@ -1,0 +1,88 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Project
+        <div class="pull-right">
+            <a onclick="history.back()" class="btn btn-primary">
+                Projects &nbsp; <i class="fa fa-arrow-circle-o-right"></i> 
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Add new project</h3>
+                </div>
+                <form name="edu_form" ng-submit="edu_form.$valid && submit()" novalidate>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input name="title" ng-model="title" placeholder="Title" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.title.$dirty && edu_form.title.$invalid">
+                                Title is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Duration year</label>
+                            <input name="duration_year" ng-model="duration_year" placeholder="Duration year" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.duration_year.$dirty && edu_form.duration_year.$invalid">
+                                Duration year is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Duration month</label>
+                            <input name="duration_month" ng-model="duration_month" placeholder="Duration month" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.duration_month.$dirty && edu_form.duration_month.$invalid">
+                                Duration month is required.
+                            </span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <input name="description" ng-model="description" placeholder="Description" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.description.$dirty && edu_form.description.$invalid">
+                                Description is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Url</label>
+                            <input name="url" ng-model="url" placeholder="Url" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.url.$dirty && edu_form.url.$invalid">
+                                Url is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Skill used</label>
+                            <input name="skill_used" ng-model="skill_used" placeholder="Skill used" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.skill_used.$dirty && edu_form.skill_used.$invalid">
+                                Skill field required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sort order</label>
+                            <input name="sort_order" type="text" ng-model="sort_order" placeholder="Sort order" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.sort_order.$dirty && edu_form.sort_order.$invalid">
+                                Sort order is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <select ng-model="status" name="status" class="form-control">
+                                <option value="1">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button ng-disabled="edu_form.$invalid" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

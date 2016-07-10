@@ -1,0 +1,54 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Project
+        <div class="pull-right">
+            <a class="btn btn-primary" ui-sref=projects_insert>
+                <i class="fa fa-plus"></i> Project
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-body no-padding">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Title</th>
+                            <th>Skill used</th>
+                            <th>Sort order</th>
+                            <th>Status</th>
+                            <th class="text-right">Action</th>
+                        </tr>
+                        <tr ng-repeat="project in projects">
+                            <td>{{project.title}}</td>
+                            <td>{{project.skill_used}}</td>
+                            <td>{{project.sort_order}}</td>
+                            <td>
+                                <span ng-show="{{project.status}}">Enabled</span>
+                                <span ng-hide="{{project.status}}">Disabled</span>
+                            </td>                            
+                            <td class="text-right">
+                                <a href="#projects/edit/{{project.project_id}}" class="btn btn-primary">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a ng-click="delete(project.project_id);" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+                
+                <div class="box-footer clearfix">
+                    <ul ng-bind-html-unsafe="pagination" class="pagination pagination-sm no-margin pull-right"></ul>
+                </div>
+                
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

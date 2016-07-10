@@ -1,0 +1,52 @@
+<div class=dashboard-page> 
+    <div class=container-fluid>
+        <div class=row> 
+            <div class="col-sm-12 col-md-12 main">
+                <div> 
+                    <snap-drawer> 
+                        <div ng-include="'views/common/menu.html'"></div>
+                    </snap-drawer> 
+                    <snap-dragger></snap-dragger> 
+                    <snap-content snap-opt-tap-to-close="false" class="bg-darkBrown fg-white snap-content"> 
+                        <a snap-toggle=left ng-click="menuOpen = !menuOpen">
+                            <span class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen class="fa fa-times fa-2x"></i> </span> 
+                        </a> 
+                        <div class=fr>
+                            <h2>My Experience</h2>
+                        </div> 
+                        
+                        <hr />
+                        
+                        <div class=jumbotron> 
+                            <div class=container>
+                           
+                                
+                                <ul class="unstyled-list experience-list">
+                                    <li ng-repeat="row in experience | orderBy:'sort_order'">
+                                        
+                                        <h2>{{row.company}}</h2>
+                                        
+                                        <p>
+                                            <b>Position</b> 
+                                            <br />
+                                            {{row.position}}
+                                        </p>
+                                        
+                                        <p>
+                                            <b>Responsibility</b> 
+                                            <br />
+                                            {{row.responsibiity}}
+                                        </p>
+                                        
+                                        <p>From {{row.date_from}} to {{row.date_to}}</p>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </snap-content>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>

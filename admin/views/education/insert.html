@@ -1,0 +1,73 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Education
+        <div class="pull-right">
+            <a onclick="history.back()" class="btn btn-primary">
+                Educations &nbsp; <i class="fa fa-arrow-circle-o-right"></i> 
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Add new education</h3>
+                </div>
+                <form name="edu_form" ng-submit="edu_form.$valid && submit()" novalidate>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Institute</label>
+                            <input name="institute" ng-model="institute" placeholder="Institute" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.institute.$dirty && edu_form.institute.$invalid">
+                                Institute is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Degree</label>
+                            <input name="degree" ng-model="degree" placeholder="Degree" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.degree.$dirty && edu_form.degree.$invalid">
+                                Degree is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Passout year</label>
+                            <input name="passout_year" ng-model="passout_year" placeholder="Passout year" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.passout_year.$dirty && edu_form.passout_year.$invalid">
+                                Passout year is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Result</label>
+                            <input name="result" ng-model="result" placeholder="Result" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.result.$dirty && edu_form.result.$invalid">
+                                Result is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sort order</label>
+                            <input name="sort_order" type="text" ng-model="sort_order" placeholder="Sort order" class="form-control" required />
+                            <span style="color:red" ng-show="edu_form.sort_order.$dirty && edu_form.sort_order.$invalid">
+                                Sort order is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <select ng-model="status" name="status" class="form-control">
+                                <option value="1">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button ng-disabled="edu_form.$invalid" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

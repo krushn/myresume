@@ -1,0 +1,12 @@
+a{
+    cursor: pointer;
+}
+.dropdown-menu > li > a.active{
+  background-color: #3c8dbc !important;
+  color: #f9f9f9 !important;
+}
+
+.content-header .btn{
+    position: relative;
+    top: -5px;
+}

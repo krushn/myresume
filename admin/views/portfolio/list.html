@@ -1,0 +1,56 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Portfolio
+        <div class="pull-right">
+            <a class="btn btn-primary" ui-sref=portfolio_insert>
+                <i class="fa fa-plus"></i> Portfolio
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-body no-padding">
+                    <table class="table table-bordered">
+                        <tr>                            
+                            <th style="width: 70px;">Image</th>
+                            <th>Title</th>
+                            <th>Date added</th>
+                            <th>Sort order</th>
+                            <th>Status</th>
+                            <th class="text-right">Action</th>
+                        </tr>
+                        <tr ng-repeat="portfolio in portfolios">
+                            <td><img style="margin-bottom: 0; width: 50px; height: 50px;" class="thumbnail" ng-src="{{portfolio.image}}" /></td>
+                            <td>{{portfolio.title}}</td>
+                            <td>{{portfolio.date_added}}</td>
+                            <td>{{portfolio.sort_order}}</td>
+                            <td>
+                                <span ng-show="{{portfolio.status}}">Enabled</span>
+                                <span ng-hide="{{portfolio.status}}">Disabled</span>
+                            </td>                            
+                            <td class="text-right">
+                                <a href="#/portfolio/edit/{{portfolio.image_id}}" class="btn btn-primary">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a ng-click="delete(portfolio.image_id);" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+                
+                <div class="box-footer clearfix">
+                    <ul ng-bind-html-unsafe="pagination" class="pagination pagination-sm no-margin pull-right"></ul>
+                </div>
+                
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

@@ -1,0 +1,110 @@
+<div class=dashboard-page> 
+    <div class=container-fluid>
+        <div class=row> 
+            <div class="col-sm-12 col-md-12 main">
+                <div> 
+                    <snap-drawer> 
+                        <div ng-include="'views/common/menu.html'"></div>
+                    </snap-drawer> 
+                    <snap-dragger></snap-dragger> 
+                    <snap-content snap-opt-tap-to-close="false" class="bg-lightGreen fg-white snap-content"> 
+                        <a snap-toggle=left ng-click="menuOpen = !menuOpen">
+                            <span class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen class="fa fa-times fa-2x"></i> </span> 
+                        </a> 
+                        <div class=fr>
+                            <h2>Contact me</h2>
+                        </div> 
+
+                        <hr />
+
+                        <div class=jumbotron> 
+                            <div class=container>
+
+                                <!-- contact form -->
+                                <form name="contact_form" ng-submit="contact_form.$valid && contact()" novalidate>
+
+                                    <div class="row">
+
+                                        <div class="col-lg-6 col-sm-12">
+
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <div class="input-control full-size text">
+                                                    <input type="text" name="name" ng-model="name" required class="form-control" />
+                                                    <span style="color:red" ng-show="contact_form.name.$dirty && contact_form.name.$invalid">
+                                                        Name is required.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <div class="input-control full-size text">
+                                                    <input type="email" name="email" ng-model="email" required class="form-control" />
+                                                    <span style="color:red" ng-show="contact_form.email.$dirty && contact_form.email.$invalid">
+                                                        Valid email address required.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Message</label>
+                                                <div class="input-control full-size text">
+                                                    <textarea name="message" ng-model="message" required class="form-control"></textarea>
+                                                    <span style="color:red" ng-show="contact_form.message.$dirty && contact_form.message.$invalid">
+                                                        Message required.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--
+                                             ng-disabled="contact_form.$dirty"
+                                            -->
+                                            <button ng-disabled="contact_form.$invalid" class="btn btn-lg btn-white">
+                                                Submit
+                                            </button>
+
+                                            <br />
+                                            <br />
+                                            
+                                            <div ng-show="submited" class="alert alert-success">
+                                                <button class="close" ng-click="hide_alert();">&times;</button>
+                                                Success: Message sent successfully!
+                                            </div>
+
+                                            <p style="color:red" class="error" ng-show="contact_form.$dirty && contact_form.$invalid">
+                                                Please, check the form carefully!
+                                            </p>
+
+                                        </div><!-- END .col-lg-6 -->
+
+                                        <div class="col-lg-6 col-sm-12">
+                                            <div class="cell ">
+                                                <p class="address"></p>
+
+                                                <p>Skpye: <a href="skype:kathrecha.krushn">kathrecha.krushn</a></p>
+                                                
+                                                <p>Email: <a href="mailto:kathrechakrushn@gmail.com">kathrechakrushn@gmail.com</a></p>
+                                                
+                                                <p>M: <a href="telephone:{{mobile}}">{{mobile}}</a></p>
+
+                                                <!--
+                                                <p>T: {{telephone}}</p>
+                                                -->
+                                                
+                                            </div>
+                                            <div class="cell ">
+                                                <a target="_blank" href="{{map_url}}">
+                                                    <img ng-src="{{map_image}}" />
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>  
+                            </div>
+                        </div>
+                    </snap-content>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div> 

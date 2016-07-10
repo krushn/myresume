@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Installer for myResume</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="page-header">
+                <h1><i>myResume</i></h1>
+            </div>
+
+            <form name="form">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Database
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>Host</label>
+                            <input name="db_host" ng-model="db_host" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input name="db_username" ng-model="db_username" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input name="db_password" ng-model="db_password" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Database</label>
+                            <input name="db_name" ng-model="db_name" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Admin access
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input name="username" ng-model="username" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input name="password" ng-model="password" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <center>
+                    <button id="btn_submit" class="btn btn-primary btn-lg">
+                        Go
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </center>
+                
+                <br />
+                <br />
+                
+            </form>
+        </div>
+        
+        <script src="js/jquery-2.1.1.min.js"></script>
+        
+        <script>
+            $(function(){
+                $('form').submit(function(e){
+                    
+                    $('#btn_submit').css('opacity','0.5');
+                    $('#btn_submit').css('cursor','not-allowed');
+                    
+                    $('.alert').remove();
+                    
+                    $.post('../api/install', $(this).serialize(), function(data){
+                        
+                        if(data.status) {
+                            
+                                location = '../admin/login.html';
+                            
+                        }else{
+                            
+                            $html = '<div class="alert alert-warning">'+data.msg+'</div>';
+                            
+                            $('form').before($html);
+                        }
+
+                        $('#btn_submit').css('opacity','1');
+                        $('#btn_submit').css('cursor','pointer');                        
+                    });
+                    
+                    e.preventDefault();
+                    return false;
+                });
+            });
+            </script>
+    </body>
+</html>

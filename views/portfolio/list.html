@@ -1,0 +1,37 @@
+<div class=dashboard-page> 
+    <div class=container-fluid>
+        <div class=row> 
+            <div class="col-sm-12 col-md-12 main">
+                <div> 
+                    <snap-drawer> 
+                        <div ng-include="'views/common/menu.html'"></div>
+                    </snap-drawer> 
+                    <snap-dragger></snap-dragger> 
+                    <snap-content snap-opt-tap-to-close="false" class="bg-lightGreen fg-white"> 
+                        <a snap-toggle=left ng-click="menuOpen = !menuOpen">
+                            <span class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen class="fa fa-times fa-2x"></i> </span> 
+                        </a> 
+                        <div class=fr>
+                            <h2>Portfolio</h2>
+                        </div> 
+                        
+                        <hr />
+                        
+                        <div class=jumbotron> 
+                            <div class=container>
+                                 <ul class="unstyled-list portfolio-list">
+                                    <li ng-repeat="image in images">
+                                        <a href="#portfolio/view/{{image.image_id}}">
+                                            <img ng-src="{{image.image}}" />
+                                        </a>
+                                    </li>
+                                 </ul>
+                                
+                            </div>
+                        </div> 
+                    </snap-content>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>

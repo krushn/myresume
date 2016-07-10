@@ -1,0 +1,73 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Portfolio
+        <div class="pull-right">
+            <a onclick="history.back()" class="btn btn-primary">
+                Portfolio &nbsp; <i class="fa fa-arrow-circle-o-right"></i> 
+            </a>
+        </div>
+    </h1>    
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Edit portfolio item</h3>
+                </div>
+                <form name="portfolio_form" ng-submit="portfolio_form.$valid && submit()" novalidate>
+                    <div class="box-body">
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image</label>
+
+                            <div ng-show="image">
+                                <br />
+                                <img class="img_upload_loading" ng-src="{{thumb_url + '/' + image}}" />
+                                <br />
+                                <br />
+                            </div>
+                            
+                            <input type="hidden" name="image" value="{{image}}" />                            
+                            <input type="file" name="file" onchange="angular.element(this).scope().uploadImage(this.files)" />                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input name="title" ng-model="title" placeholder="Title" class="form-control" required />
+                            <span style="color:red" ng-show="portfolio_form.title.$dirty && portfolio_form.title.$invalid">
+                                Title is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <textarea name="description" ng-model="description" placeholder="Description" class="form-control" required></textarea>
+                            <span style="color:red" ng-show="portfolio_form.description.$dirty && portfolio_form.description.$invalid">
+                                Description is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sort order</label>
+                            <input name="sort_order" type="text" ng-model="sort_order" placeholder="Sort order" class="form-control" required />
+                            <span style="color:red" ng-show="portfolio_form.sort_order.$dirty && portfolio_form.sort_order.$invalid">
+                                Sort order is required.
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Status</label>
+                            <select ng-model="status" name="status" class="form-control">
+                                <option value="1">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button ng-disabled="portfolio_form.$invalid" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section><!-- /.content -->

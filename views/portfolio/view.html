@@ -1,0 +1,59 @@
+<div class=dashboard-page> 
+    <div class=container-fluid>
+        <div class=row> 
+            <div class="col-sm-12 col-md-12 main">
+                <div> 
+                    <snap-drawer> 
+                        <div ng-include="'views/common/menu.html'"></div>
+                    </snap-drawer> 
+                    <snap-dragger></snap-dragger> 
+                    <snap-content snap-opt-tap-to-close="false" class="bg-lightGreen fg-white"> 
+                        <a snap-toggle=left ng-click="menuOpen = !menuOpen">
+                            <span class=menutoggle> <i ng-hide=menuOpen class="fa fa-bars fa-2x"></i> <i ng-show=menuOpen class="fa fa-times fa-2x"></i> </span> 
+                        </a> 
+                        <div class=fr>
+                            <h2>Portfolio</h2>
+                        </div> 
+                        
+                        <hr />
+                        
+                        <div class=jumbotron> 
+                            <div class=container>
+                                
+                                <h1 class="text-shadow">
+                                    {{image.title}}
+                                </h1> 
+
+                                <br />
+                                
+                                <div class="grid">
+                                <div class="row cells12">
+                                    <div class="cell colspan8">
+                                        <img ng-src="{{image.image}}" />
+                                    </div>
+                                    <div class="cell colspan4">
+                                        
+                                        <p>
+                                        {{image.description}}
+                                        </p>
+                                        
+                                        <br />
+                                        <br />
+                                        <br />
+                                        
+                                        <a class="right" href=#portfolio>
+                                            <i class="fa fa-arrow-left"></i>
+                                            BACK TO PORTFOLIO
+                                        </a>
+
+                                    </div>
+                                </div>      
+                                </div>
+                            </div>
+                        </div> 
+                    </snap-content>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>
